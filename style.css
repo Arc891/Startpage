@@ -81,7 +81,9 @@ html, body {
 }
 
 .title {
-  font-size: 20px;
+  font-size: 21px;
+  /* font-style: italic; */
+  text-decoration: underline;
 }
 
 li {
@@ -122,7 +124,7 @@ a:hover {
   }
 }
 
-#Date {
+#time {
 
   font-family: 'Bebas Neue';
   font-size: 40px;
