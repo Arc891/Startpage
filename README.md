@@ -1,5 +1,12 @@
 # startpage
-My custom startpage, edited from https://github.com/kencx. I added an interactive gif, and an actually typing interface in which you can enter websites (no browser search support tho, also not needed to type the 'http://www.') and my own quick links.
+My custom startpage, edited from https://github.com/kencx and https://github.com/nwvh. 
+I added an interactive gif, and an actual typing interface in which you can enter websites (no browser search support tho, so entering a look-up term will not work. Therefore I just added the 'http://www.' to the beginning of the entered text to go to said page) and my own quick links.
+
+
+# Showcase of my page
+
+![startpage_example](https://user-images.githubusercontent.com/76947137/172838904-becac13c-5b95-450d-97c8-48152c92d2a5.gif)
+
 
 # How to use?
 
@@ -11,7 +18,7 @@ My custom startpage, edited from https://github.com/kencx. I added an interactiv
 # Customization
 
 ### Image(s)
-I have included a few vaporwave/retro styled gifs in this repo, you can edit it on the line <b>27</b> in the index.html by adding ```src="img/example.img"``` (or your own image/gif) and changing the ```rest``` class to ```vapor```.
+There are a few vaporwave/retro styled gifs included in this repo, you can edit which one you want to use instead of the current interactive one I made myself on line <b>27</b> of index.html by adding ```src="img/example.gif"``` (or your own image/gif) and changing the ```rest``` class to ```vapor```.
 
 ### URLs
 you can edit all of the URLs to your desired, starting on line **40** in ```index.html```
@@ -21,6 +28,3 @@ you can edit all of the URLs to your desired, starting on line **40** in ```inde
 ### Categories
 
 You can ofcourse go ahead and add your own categories should you wish to do so, have fun with it :)
-
-# Screenshot
-![image](https://i.imgur.com/0o38VuJ.png)
