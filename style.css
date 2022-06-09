@@ -23,7 +23,6 @@ html, body {
   border-radius: 12px;
   border-style: solid;
   border-color: #FF79C6;
-
 }
 
 .container {
@@ -86,6 +85,20 @@ html, body {
   text-decoration: underline;
 }
 
+.rest {
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #FF79C6;
+  content: url('rest.gif');
+}
+
+.continue {
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #FF79C6;
+  content: url("continue.gif");
+}
+
 li {
   font-size: 16px;
   list-style-type: none;
@@ -125,7 +138,10 @@ a:hover {
 }
 
 #time {
-
   font-family: 'Bebas Neue';
   font-size: 40px;
+}
+
+#dir {
+  text-decoration: none;
 }
