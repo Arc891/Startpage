@@ -20,7 +20,7 @@ function logKey(e) {
         
         case "Enter":
             let website = document.getElementById('dir');
-            let url = "https://www.";
+            let url = "http://www.";
             for (let i = 7; i < website.textContent.length - 1; i++) {
                 url += website.textContent[i];
             }

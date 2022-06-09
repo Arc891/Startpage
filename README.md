@@ -1,25 +1,26 @@
 # startpage
-My startpage, edited from github.com/kencx
+My custom startpage, edited from https://github.com/kencx. I added an interactive gif, and an actually typing interface in which you can enter websites (no browser search support tho, also not needed to type the 'http://www.') and my own quick links.
 
 # How to use?
 
 1. git clone this repo
+```git clone git@github.com:Arc891/Startpage.git```
 2. copy the path to the index.html file
 3. set the path as your default startpage in your desired browser
 
 # Customization
 
 ### Image(s)
-i have included a few vaporwave/retro styled gifs in this repo, you can edit it on the line <b>22</b> in the index.html the ```src="clouds.gif"``` to something like ```src="plane.gif"``` or your own image/gif
+I have included a few vaporwave/retro styled gifs in this repo, you can edit it on the line <b>27</b> in the index.html by adding ```src="example.img"``` (or your own image/gif) and changing the ```rest``` class to ```vapor```.
 
 ### URLs
-you can edit all of the URLs to your desired, starting on line **44** in ```index.html```
+you can edit all of the URLs to your desired, starting on line **40** in ```index.html```
 <br> **Example:** <br>
-**line 45:** ```<li><a href="https://github.com/">github</a></li>``` <br >can be changed to <br> **line 45:** ```<li><a href="https://yoururl.com/">your url</a></li>```
+**line 43:** ```<li><a href="https://photos.google.com/">photos</a></li>``` <br >can be changed to <br> **line 43:** ```<li><a href="https://yoururl.com/">your url</a></li>```
 
 ### Categories
 
-i think you get it, starting on line **44** you can change the names of the categories etc. etc. i believe you're not dumb and understand
+You can ofcourse go ahead and add your own categories should you wish to do so, have fun with it :)
 
 # Screenshot
-![image](https://user-images.githubusercontent.com/76164598/170824479-5918fe82-18df-4549-8b20-c2b1595a27d0.png)
+![image](https://imgur.com/0o38VuJ)
