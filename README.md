@@ -23,4 +23,4 @@ you can edit all of the URLs to your desired, starting on line **40** in ```inde
 You can ofcourse go ahead and add your own categories should you wish to do so, have fun with it :)
 
 # Screenshot
-![image](https://imgur.com/0o38VuJ)
+![image](https://i.imgur.com/0o38VuJ.png)
