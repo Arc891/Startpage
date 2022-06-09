@@ -89,14 +89,14 @@ html, body {
   border-radius: 12px;
   border-style: solid;
   border-color: #FF79C6;
-  content: url('rest.gif');
+  content: url('img/rest.gif');
 }
 
 .continue {
   border-radius: 12px;
   border-style: solid;
   border-color: #FF79C6;
-  content: url("continue.gif");
+  content: url("img/continue.gif");
 }
 
 li {

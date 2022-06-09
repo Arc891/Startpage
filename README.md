@@ -11,7 +11,7 @@ My custom startpage, edited from https://github.com/kencx. I added an interactiv
 # Customization
 
 ### Image(s)
-I have included a few vaporwave/retro styled gifs in this repo, you can edit it on the line <b>27</b> in the index.html by adding ```src="example.img"``` (or your own image/gif) and changing the ```rest``` class to ```vapor```.
+I have included a few vaporwave/retro styled gifs in this repo, you can edit it on the line <b>27</b> in the index.html by adding ```src="img/example.img"``` (or your own image/gif) and changing the ```rest``` class to ```vapor```.
 
 ### URLs
 you can edit all of the URLs to your desired, starting on line **40** in ```index.html```
