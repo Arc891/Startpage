@@ -1,5 +1,5 @@
 # startpage
-My custom startpage, edited from https://github.com/kencx. I added an interactive gif, and an actually typing interface in which you can enter websites (no browser search support tho, also not needed to type the 'http://www.') and my own quick links.
+My custom startpage, edited from https://github.com/kencx. I added an interactive gif, and an actually typing interface in which you can enter a google search query, and my own quick links.
 
 # How to use?
 
