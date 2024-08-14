@@ -9,6 +9,7 @@ class Statusbar extends Component {
   };
 
   currentTabIndex = 0;
+  SearchBarInstance = new SearchBar();
 
   constructor() {
     super();
@@ -19,6 +20,7 @@ class Statusbar extends Component {
   setDependencies() {
     this.externalRefs = {
       categories: this.parentNode.querySelectorAll(this.refs.categories),
+      search: this.parentNode.querySelector("search-bar"),
     };
   }
 
@@ -184,7 +186,6 @@ class Statusbar extends Component {
       }
     `;
   }
-
   template() {
     return `
         <div id="tabs">
@@ -194,6 +195,7 @@ class Statusbar extends Component {
                 </button>
                 <ul class="- indicator"></ul>
                 <div class="+ widgets col-end">
+                    <search-bar class="+ widget"></search-bar>
                     <current-time class="+ widget"></current-time>
                     <weather-forecast class="+ widget weather"></weather-forecast>
                 </div>
@@ -261,6 +263,25 @@ class Statusbar extends Component {
 
     if (Number.isInteger(parseInt(key)) && key <= this.externalRefs.categories.length) {
       this.activateByKey(key - 1);
+    }
+
+    let activeTab = -1;
+    this.refs.tabs.forEach((tab, index) => {
+      if (tab.getAttribute("active") === "") {
+        activeTab = index;
+      }
+    });
+    
+    switch (key) {
+      case "ArrowLeft":
+        this.activateByKey(activeTab - 1 < 0 ? this.refs.tabs.length - 2 : activeTab - 1);
+        break;
+      case "ArrowRight":
+        this.activateByKey((activeTab + 1) % (this.refs.tabs.length - 1));
+        break;
+      default:
+          this.SearchBarInstance.handleKeyPress(key);
+          break;
     }
   }
 
