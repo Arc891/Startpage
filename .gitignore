@@ -1,0 +1,9 @@
+# chores
+.log/
+.pytest_cache
+
+# IDE
+.vscode
+
+# OS
+.DS_Store
