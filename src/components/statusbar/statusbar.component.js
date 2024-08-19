@@ -9,8 +9,7 @@ class Statusbar extends Component {
   };
 
   currentTabIndex = 0;
-  SearchBarInstance = new SearchBar();
-
+  
   constructor() {
     super();
 
@@ -20,7 +19,6 @@ class Statusbar extends Component {
   setDependencies() {
     this.externalRefs = {
       categories: this.parentNode.querySelectorAll(this.refs.categories),
-      search: this.parentNode.querySelector("search-bar"),
     };
   }
 
@@ -206,7 +204,7 @@ class Statusbar extends Component {
   setEvents() {
     this.refs.tabs.forEach((tab) => (tab.onclick = ({ target }) => this.handleTabChange(target)));
 
-    document.onkeydown = (e) => this.handleKeyPress(e);
+    // document.onkeydown = (e) => this.handleKeyPress(e);
     document.onwheel = (e) => this.handleWheelScroll(e);
     this.refs.fastlink.onclick = () => {
       console.log(CONFIG.fastlink);
@@ -254,6 +252,10 @@ class Statusbar extends Component {
     }
   }
 
+  keyHandler(event) {
+    this.handleKeyPress(event);
+  }
+
   handleKeyPress(event) {
     if (!event) return;
 
@@ -280,8 +282,7 @@ class Statusbar extends Component {
         this.activateByKey((activeTab + 1) % (this.refs.tabs.length - 1));
         break;
       default:
-          this.SearchBarInstance.handleKeyPress(key);
-          break;
+        break;
     }
   }
 

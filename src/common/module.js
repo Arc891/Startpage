@@ -1,9 +1,9 @@
 const components = {
   "status-bar": Statusbar,
-  "current-time": Clock,
-  "search-bar": SearchBar,
-  "weather-forecast": Weather,
   "tabs-list": Tabs,
+  "search-bar": SearchBar,
+  "current-time": Clock,
+  "weather-forecast": Weather,
 };
 
 Object.keys(components).forEach(componentName => {

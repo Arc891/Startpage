@@ -21,7 +21,7 @@ class Config {
     this.storage = new Storage("config");
 
     this.autoConfig();
-    this.setKeybindings();
+    // this.setKeybindings();
     this.save();
 
     return new Proxy(this, {
@@ -85,12 +85,12 @@ class Config {
    * @returns {void}
    */
   setKeybindings() {
-    document.onkeypress = ({ key }) => {
+    document.addEventListener('keypress', ({ key }) => {
       if (document.activeElement !== document.body) return;
-
+    
       if (Object.keys(this.config.keybindings).includes(key))
         Actions.activate(this.config.keybindings[key]);
-    };
+    });
   }
 
   save() {

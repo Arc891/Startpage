@@ -13,12 +13,6 @@ class Clock extends Component {
   setEvents() {
     this.onclick = this.switchFormat;
   }
-
-  switchFormat() {
-    CONFIG.clock.format = CONFIG.clock.format === "h:i:s A d/m/Y" ? "H:i A" : "h:i:s A d/m/Y";
-    this.setTime();
-  }
-
   imports() {
     return [this.resources.icons.material, this.resources.fonts.roboto];
   }
@@ -55,6 +49,11 @@ class Clock extends Component {
     const date = new Date();
 
     this.refs.clock = date.strftime(CONFIG.clock.format);
+  }
+
+  switchFormat() {
+    CONFIG.clock.format = CONFIG.clock.format === "h:i:s A d/m/Y" ? "H:i A" : "h:i:s A d/m/Y";
+    this.setTime();
   }
 
   connectedCallback() {

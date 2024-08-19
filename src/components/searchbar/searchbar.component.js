@@ -1,10 +1,7 @@
 class SearchBar extends Component {
-    externalRefs = {};
-
     refs = {
         searchInput: ".search-input",
         searchIcon: ".search-icon",
-        searchButton: ".search-button",
     };
 
     inputText = "";
@@ -12,19 +9,11 @@ class SearchBar extends Component {
     constructor() {
         super();
 
-        this.setDependencies();
         this.setEvents();
     }
 
     setEvents() {
-        this.onclick = this.search;
-    }
-
-    setDependencies() {
-        this.externalRefs = {
-            searchInput: this.shadow.querySelector(this.refs.searchInput),
-            searchIcon: this.shadow.querySelector(this.refs.searchIcon),
-        };
+        this.refs.searchIcon = () => this.search;
     }
 
     imports() {
@@ -33,7 +22,7 @@ class SearchBar extends Component {
 
     style() {
         return `
-            .search-bar {
+            .searchbar {
                 border: 1px solid #ccc;
                 display: flex;
                 align-items: center;
@@ -43,53 +32,63 @@ class SearchBar extends Component {
 
             .search-input {
                 width: 100%;
-                padding: 10px;
+                padding: 5px;
                 font-size: 16px;
                 border: 1px solid #ccc;
                 border-radius: 5px;
                 margin-right: 10px;
+                font: 300 9pt 'Roboto', sans-serif;
             }
 
             .search-icon {
-                cursor: pointer;
+                color: #f38ba8;
+                font-size: 10px;
+                margin-right: 10px;
             }
 
-            .search-button {
-                padding: 10px;
-                font-size: 16px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                cursor: pointer;
-            }
         `;
     }
 
     template() {
         return `
             <span class="material-icons search-icon">search</span>
-            <input class="search-input" type="text" placeholder="Search...">
-            <button class="search-button">Search</button>
+            <p class="search-input">Search..</p>
         `;
     }
 
-    handleKeyPress(key) {
-        if (key.length === 1) {
-            // this.externalRefs.searchInput.value += key;
-            this.inputText += key;
-        } else if (key === "Backspace") {
-            // this.externalRefs.searchInput.value = this.externalRefs.searchInput.value.slice(0, -1);
-            this.inputText = this.inputText.slice(0, -1);
-        } else if (key === "Enter") {
-            this.search(this.inputText);
-        } else {
-            console.log(`Key pressed: ${key}`);
-        }
-        console.log(`Input text: ${this.inputText}`);
+    keyHandler(event) {
+        this.handleKeyPress(event);
     }
 
-    search = (s = "") => {
-        // const query = this.externalRefs.searchInput.value ? this.externalRefs.searchInput.value : s;
-        console.log(`Searching for: ${s}`);
-        window.open(`https://www.google.com/search?q=${s}`, "_blank");
+    handleKeyPress(event) {
+        const key = event.key;
+
+        if (key.length === 1) {
+            this.inputText += key;
+        } else if (key === "Backspace") {
+            if (event.altKey) { this.inputText = "" }
+            else if (event.ctrlKey) { 
+                this.inputText  
+                    ? this.inputText = this.inputText.split(" ").slice(0, -1).join(" ")
+                    : this.inputText = "";
+            }
+            else { this.inputText = this.inputText.slice(0, -1); }
+        } else if (key === "Enter") {
+            this.search();
+        }
+        this.updateInputText();
+    }
+
+    updateInputText() {
+        this.refs.searchInput = this.inputText || "Search..";
+    }
+
+    search = () => {
+        console.log(`Searching for: ${this.inputText}`);
+        window.open(`https://www.google.com/search?q=${this.inputText}`, "_blank");
     };
+
+    connectedCallback() {
+        this.render();
+    }
 }

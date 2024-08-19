@@ -1,5 +1,22 @@
 const RenderedComponents = {};
 
+class KeyEventHandler {
+  constructor() {
+    this.handlers = [];
+    document.onkeydown = this.handleKeydown.bind(this);
+  }
+
+  registerHandler(handler) {
+    this.handlers.push(handler);
+  }
+
+  handleKeydown(event) {
+    this.handlers.forEach(handler => handler(event));
+  }
+}
+
+const keyEventHandler = new KeyEventHandler();
+
 class Component extends HTMLElement {
   refs = {};
 
@@ -23,11 +40,14 @@ class Component extends HTMLElement {
     super();
 
     this.shadow = this.attachShadow({ mode: 'open' });
+    this.keyHandler = this.keyHandler.bind(this);
+    keyEventHandler.registerHandler(this.keyHandler);
   }
 
   style() { return null; }
   template() { return null; }
   imports() { return []; }
+  keyHandler(event) { return null; }
 
   /**
    * Reference an external css file
