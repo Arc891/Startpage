@@ -85,7 +85,7 @@ class SearchBar extends Component {
 
     search = () => {
         console.log(`Searching for: ${this.inputText}`);
-        window.open(`https://www.google.com/search?q=${this.inputText}`, "_blank");
+        window.open(`https://www.google.com/search?q=${this.inputText}`, "_self");
     };
 
     connectedCallback() {
