@@ -34,6 +34,7 @@ class Links extends Component {
               )
               .join("")}
             </div>
+            ${(links.length <= 5) ? "<br/>" : "" /* Make single rows more spacious */}
           </li>`;
         })
         .join("")}
@@ -105,7 +106,7 @@ class Tabs extends Component {
           border-radius: 5px 0 0 5px;
           width: 90%;
           max-width: 1200px;
-          height: 450px;
+          height: 470px;
           right: 0;
           left: 0;
           top: 0;
