@@ -19,19 +19,25 @@ const default_config = {
       background_url: "src/img/banners/cbg-9.gif",
       categories: [
         {
-          name: "bookmarks",
+          name: "favorites",
           links: [
             {
-              name: "raindrop",
-              url: "https://app.raindrop.io",
-              icon: "droplet-bolt",
+              name: "spotify",
+              url: "https://open.spotify.com",
+              icon: "brand-spotify",
               icon_color: "#a6e3a1",
             },
             {
-              name: "musicForProgramming();",
-              url: "https://musicforprogramming.net/sixty",
-              icon: "binary-tree",
+              name: "namokiMods",
+              url: "https://namokimods.com",
+              icon: "clock-cog",
               icon_color: "#fab387",
+            },
+            {
+              name: "start",
+              url: "https://start.arc8.dev",
+              icon: "terminal",
+              icon_color: "#f38ba8"
             },
           ],
         },
@@ -47,14 +53,8 @@ const default_config = {
             {
               name: "calendar",
               url: "https://calendar.google.com",
-              icon: "calendar-filled",
+              icon: "calendar",
               icon_color: "#fab387",
-            },
-            {
-              name: "sheets",
-              url: "https://docs.google.com/spreadsheets",
-              icon: "table",
-              icon_color: "#f38ba8",
             },
             {
               name: "drive",
@@ -63,11 +63,18 @@ const default_config = {
               icon_color: "#89b4fa",
             },
             {
+              name: "photos",
+              url: "https://photos.google.com",
+              icon: "brand-google-photos",
+              icon_color: "#cba6f7"
+            },
+            {
               name: "keep",
               url: "https://keep.google.com/",
-              icon: "notebook",
-              icon_color: "#a6e3a1",
+              icon: "bulb",
+              icon_color: "#f2de94",
             },
+            
           ],
         },
         {
@@ -80,7 +87,7 @@ const default_config = {
               icon_color: "#a6e3a1",
             },
             {
-              name: "Study Bible",
+              name: "study Bible",
               url: "https://online.studiebijbel.nl",
               icon: "book",
               icon_color: "#fab387",
@@ -97,14 +104,14 @@ const default_config = {
     },
     {
       name: "dev",
-      background_url: "src/img/banners/cbg-8.gif",
+      background_url: "src/img/banners/cbg-7.gif",
       categories: [
         {
           name: "resources",
           links: [
             {
               name: "github",
-              url: "https://github.com/Arc891?tab=repositories",
+              url: "https://github.com/Arc891",
               icon: "brand-github",
               icon_color: "#a6e3a1",
             },
@@ -113,6 +120,12 @@ const default_config = {
               url: "https://anamata-nl.atlassian.net",
               icon: "briefcase",
               icon_color: "#fab387",
+            },
+            {
+              name: "azure",
+              url: "https://dev.azure.com/INGCDaaS/IngOne/_workitems/assignedtome/",
+              icon: "brand-azure",
+              icon_color: "#89b4fa",
             },
             {
               name: "wakatime",
@@ -126,12 +139,6 @@ const default_config = {
           name: "challenges",
           links: [
             {
-              name: "kaggle",
-              url: "https://www.kaggle.com/volodymyrpivoshenko",
-              icon: "brain",
-              icon_color: "#a6e3a1",
-            },
-            {
               name: "leetcode",
               url: "https://leetcode.com",
               icon: "code-plus",
@@ -143,28 +150,40 @@ const default_config = {
               icon: "brand-stackoverflow",
               icon_color: "#f38ba8",
             },
+            {
+              name: "kaggle",
+              url: "https://www.kaggle.com/competitions",
+              icon: "brain",
+              icon_color: "#a6e3a1",
+            },
+            {
+              name: "chatgpt",
+              url: "https://chatgpt.com",
+              icon: "brand-openai",
+              icon_color: "#ffffff",
+            },
           ],
         },
         {
-          name: "blogs",
+          name: "hosting",
           links: [
             {
-              name: "hackernews",
-              url: "https://news.ycombinator.com",
-              icon: "brand-redhat",
+              name: "cloudflare",
+              url: "https://dash.cloudflare.com",
+              icon: "brand-cloudflare",
               icon_color: "#fab387",
             },
             {
-              name: "uber research",
-              url: "https://eng.uber.com/category/articles",
-              icon: "brand-uber",
+              name: "porkbun",
+              url: "https://porkbun.com",
+              icon: "pig",
               icon_color: "#f38ba8",
             },
             {
-              name: "google research",
-              url: "https://blog.research.google",
-              icon: "hexagon-letter-g",
-              icon_color: "#89b4fa",
+              name: "apiscp",
+              url: "https://ezrah.me",
+              icon: "binary-tree-2",
+              icon_color: "#a6e3a1",
             },
           ],
         },
@@ -175,37 +194,74 @@ const default_config = {
       background_url: "src/img/banners/cbg-2.gif",
       categories: [
         {
-          name: "social medias",
+          name: "entertainment",
           links: [
             {
-              name: "whatsapp",
-              url: "https://web.whatsapp.org",
-              icon: "brand-whatsapp",
-              icon_color: "#a6e3a1",
-            },
-            {
-              name: "telegram",
-              url: "https://web.telegram.org",
-              icon: "brand-telegram",
-              icon_color: "#89b4fa",
-            },
-            {
-              name: "instagram",
-              url: "https://www.instagram.com",
-              icon: "brand-instagram",
+              name: "youtube",
+              url: "https://www.youtube.com",
+              icon: "brand-youtube",
               icon_color: "#fab387",
             },
             {
-              name: "reddit",
-              url: "https://www.reddit.com/r/unixporn",
-              icon: "brand-reddit",
+              name: "netflix",
+              url: "https://www.netflix.com",
+              icon: "brand-netflix",
               icon_color: "#f38ba8",
+            },
+            {
+              name: "prime video",
+              url: "https://primevideo.com",
+              icon: "brand-amazon",
+              icon_color: "#89b4fa"
+            },
+            {
+              name: "disney+",
+              url: "https://disneyplus.com",
+              icon: "brand-disney",
+              icon_color: "#89b4fa",
+            },
+            {
+              name: "crunchyroll",
+              url: "https://cruncyroll.com",
+              icon: "brand-funimation",
+              icon_color: "#fab387",
+            },
+            {
+              name: "F1TV",
+              url: "https://f1tv.com",
+              icon: "square-f1",
+              icon_color: "#f38ba8",
+            },
+            {
+              name: "WEC",
+              url: "https://fiawec.tv",
+              icon: "clock-24",
+              icon_color: "#89b4fa",
+            },
+            {
+              name: "odido tv",
+              url: "https://tv.odido.com",
+              icon: "device-tv",
+              icon_color: "#cba6f7",
             },
           ],
         },
         {
           name: "games",
           links: [
+            
+            {
+              name: "chess",
+              url: "https://chess.com",
+              icon: "chess",
+              icon_color: "#a6e3a1",
+            },
+            {
+              name: "lichess",
+              url: "https://lichess.org",
+              icon: "chess-knight",
+              icon_color: "#ffffff",
+            },
             {
               name: "steam",
               url: "https://store.steampowered.com",
@@ -224,40 +280,41 @@ const default_config = {
               icon: "device-nintendo",
               icon_color: "#f38ba8",
             },
-            {
-              name: "chess",
-              url: "https://chess.com",
-              icon: "chess",
-              icon_color: "#a6e3a1",
-            },
+            
           ],
         },
         {
-          name: "video",
+          name: "communication",
           links: [
             {
-              name: "youtube",
-              url: "https://www.youtube.com",
-              icon: "brand-youtube",
-              icon_color: "#fab387",
+              name: "whatsapp",
+              url: "https://web.whatsapp.org",
+              icon: "brand-whatsapp",
+              icon_color: "#a6e3a1",
             },
             {
-              name: "netflix",
-              url: "https://www.netflix.com",
-              icon: "brand-netflix",
-              icon_color: "#f38ba8",
+              name: "discord",
+              url: "https://discord.com/channels/@me",
+              icon: "brand-discord",
+              icon_color: "#cba6f7"
             },
             {
-              name: "disney+",
-              url: "https://disneyplus.com",
-              icon: "brand-disney",
+              name: "telegram",
+              url: "https://web.telegram.org",
+              icon: "brand-telegram",
               icon_color: "#89b4fa",
             },
             {
-              name: "twitch",
-              url: "https://twitch.tc",
-              icon: "brand-twitch",
-              icon_color: "#cba6f7",
+              name: "instagram",
+              url: "https://www.instagram.com",
+              icon: "brand-instagram",
+              icon_color: "#fab387",
+            },
+            {
+              name: "reddit",
+              url: "https://www.reddit.com/r/unixporn",
+              icon: "brand-reddit",
+              icon_color: "#f38ba8",
             },
           ],
         },
