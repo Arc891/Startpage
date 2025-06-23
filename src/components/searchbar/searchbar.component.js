@@ -23,7 +23,7 @@ class SearchBar extends Component {
     style() {
         return `
             .searchbar {
-                border: 1px solid #ccc;
+                border: 1px solid #cdd6f4;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -38,6 +38,7 @@ class SearchBar extends Component {
                 border-radius: 5px;
                 margin-right: 10px;
                 font: 300 9pt 'Roboto', sans-serif;
+                color: #cdd6f4;
             }
 
             .search-icon {
@@ -66,8 +67,8 @@ class SearchBar extends Component {
         if (key.length === 1) {
             this.inputText += key;
         } else if (key === "Backspace") {
-            if (event.altKey) { this.inputText = "" }
-            else if (event.ctrlKey) { 
+            if (event.ctrlKey) { this.inputText = "" }
+            else if (event.altKey) { 
                 this.inputText  
                     ? this.inputText = this.inputText.split(" ").slice(0, -1).join(" ")
                     : this.inputText = "";
@@ -80,7 +81,7 @@ class SearchBar extends Component {
     }
 
     updateInputText() {
-        this.refs.searchInput = this.inputText || "Search..";
+        this.refs.searchInput = this.inputText || "Search...";
     }
 
     search = () => {
