@@ -24,13 +24,22 @@ class Links extends Component {
               <div class="links-wrapper">
               ${links
               .map(
-                (link) => `
-                  <div class="link-info">
-                    <a href="${link.url}" target="_self">
-                      ${Links.getIcon(link)}
-                      ${link.name ? `<p class="link-name">${link.name}</p>` : ""}
-                    </a>
-                </div>`
+                (link) => 
+                  link.popup 
+                    ? `
+                      <div class="link-info">
+                        <button class="popup-link" data-url="${link.url}">
+                          ${Links.getIcon(link)}
+                          ${link.name ? `<p class="link-name">${link.name}</p>` : ""}
+                        </button>
+                      </div>` 
+                    : `
+                      <div class="link-info">
+                        <a href="${link.url}" target="_self">
+                          ${Links.getIcon(link)}
+                          ${link.name ? `<p class="link-name">${link.name}</p>` : ""}
+                        </a>
+                      </div>`
               )
               .join("")}
             </div>
@@ -277,6 +286,26 @@ class Tabs extends Component {
               opacity: 1;
           }
       }
+
+      .popup-link {
+        color: #cdd6f4;
+        background: #181825;
+        border: none;
+        font: 700 18px 'Roboto', sans-serif;
+        transition: all .2s;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        padding: .4em .7em;
+        margin: 0 0 .7em 0;
+        box-shadow: 0 4px rgba(24, 24, 37, 0.5), 0 5px 10px rgb(0 0 0 / 20%);
+        border-radius: 2px;
+      }
+      .popup-link:hover {
+        color: var(--flavour);
+        transform: translate(0, 4px);
+        box-shadow: 0 0 rgba(0, 0, 0, 0.25), 0 0 0 rgba(0, 0, 0, .5), 0 -0px 5px rgba(0, 0, 0, .1);
+      }
     `;
   }
 
@@ -296,5 +325,16 @@ class Tabs extends Component {
 
   connectedCallback() {
     this.render();
+    // Use the shadow root if present, otherwise fallback to document
+    const root = this.shadowRoot || document;
+    root.addEventListener("click", (e) => {
+      const btn = e.target.closest(".popup-link");
+      if (btn) {
+        e.preventDefault();
+        const url = btn.getAttribute("data-url");
+        const popup = document.getElementById("popupWindow");
+        if (popup) popup.show(url, btn);
+      }
+    });
   }
 }
