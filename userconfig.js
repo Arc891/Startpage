@@ -36,14 +36,14 @@ const default_config = {
             {
               name: "console",
               url: "https://pi5-ws.arc8.dev",
-              icon: "terminal",
+              icon: "terminal-2",
               icon_color: "#89b4fa",
               popup: true,
             },
             {
               name: "dashboard",
               url: "https://dashboard.arc8.dev",
-              icon: "dashboard",
+              icon: "device-desktop-analytics",
               icon_color: "#f38ba8",
             },
           ],
