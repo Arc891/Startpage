@@ -186,6 +186,12 @@ const default_config = {
               icon_color: "#f38ba8",
             },
             {
+              name: "tailscale",
+              url: "https://login.tailscale.com/admin/machines",
+              icon: "grid-dots",
+              icon_color: "#c4c4c4"
+            },
+            {
               name: "apiscp",
               url: "https://ezrah.me",
               icon: "binary-tree-2",
