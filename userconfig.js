@@ -34,10 +34,17 @@ const default_config = {
               icon_color: "#fab387",
             },
             {
-              name: "start",
-              url: "https://start.arc8.dev",
+              name: "console",
+              url: "https://pi5-ws.arc8.dev",
               icon: "terminal",
-              icon_color: "#f38ba8"
+              icon_color: "#89b4fa",
+              popup: true,
+            },
+            {
+              name: "dashboard",
+              url: "https://dashboard.arc8.dev",
+              icon: "dashboard",
+              icon_color: "#f38ba8",
             },
           ],
         },
@@ -66,7 +73,7 @@ const default_config = {
               name: "photos",
               url: "https://photos.google.com",
               icon: "brand-google-photos",
-              icon_color: "#cba6f7"
+              icon_color: "#cba6f7",
             },
             {
               name: "keep",
@@ -74,7 +81,6 @@ const default_config = {
               icon: "bulb",
               icon_color: "#f2de94",
             },
-            
           ],
         },
         {
@@ -212,7 +218,7 @@ const default_config = {
               name: "prime video",
               url: "https://primevideo.com",
               icon: "brand-amazon",
-              icon_color: "#89b4fa"
+              icon_color: "#89b4fa",
             },
             {
               name: "disney+",
@@ -249,7 +255,6 @@ const default_config = {
         {
           name: "games",
           links: [
-            
             {
               name: "chess",
               url: "https://chess.com",
@@ -280,7 +285,6 @@ const default_config = {
               icon: "device-nintendo",
               icon_color: "#f38ba8",
             },
-            
           ],
         },
         {
@@ -296,7 +300,7 @@ const default_config = {
               name: "discord",
               url: "https://discord.com/channels/@me",
               icon: "brand-discord",
-              icon_color: "#cba6f7"
+              icon_color: "#cba6f7",
             },
             {
               name: "telegram",
