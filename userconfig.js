@@ -33,7 +33,7 @@ const default_config = {
               icon: "square-letter-w",
               icon_color: "#a6e3a1",
               popup: true,
-              popup_size: "500x700",
+              popup_size: "500x725",
             },
             {
               name: "console",
