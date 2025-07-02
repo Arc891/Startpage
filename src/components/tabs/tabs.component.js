@@ -28,7 +28,7 @@ class Links extends Component {
                   link.popup 
                     ? `
                       <div class="link-info">
-                        <button class="popup-link" data-url="${link.url}">
+                        <button class="popup-link" data-url="${link.url}" toSize="${link.popup_size || '800x600'}">
                           ${Links.getIcon(link)}
                           ${link.name ? `<p class="link-name">${link.name}</p>` : ""}
                         </button>
@@ -333,7 +333,11 @@ class Tabs extends Component {
         e.preventDefault();
         const url = btn.getAttribute("data-url");
         const popup = document.getElementById("popupWindow");
-        if (popup) popup.show(url, btn);
+        if (popup) {
+          const popupSize = btn.getAttribute("toSize") || "800x600";
+          console.debug(`Opening popup for URL: ${url} with size: ${popupSize}`);
+          popup.show(url, btn, popupSize);
+        } 
       }
     });
   }

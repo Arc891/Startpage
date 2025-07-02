@@ -3,6 +3,8 @@ class PopupWindow extends HTMLElement {
     super();
     this.attachShadow({ mode: "open" });
     this.url = "";
+    this.definedWidth = "800px";
+    this.definedHeight = "600px";
     this.shadowRoot.innerHTML = `
       <style>
         :host {
@@ -18,8 +20,8 @@ class PopupWindow extends HTMLElement {
           background: #1e1e2e;
           border-radius: 10px;
           box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-          min-width: 900px;
-          min-height: 500px;
+          min-width: ${window.innerWidth > this.definedWidth ? this.definedWidth : "90vw"};
+          min-height: ${window.innerHeight > this.definedHeight ? this.definedHeight : "90vh"};
           padding: 2em;
           position: relative;
           opacity: 0;
@@ -46,7 +48,7 @@ class PopupWindow extends HTMLElement {
         }
       </style>
       <div class="popup-content">
-        <iframe src="" frameborder="0" style="width:100%;height:500px;border-radius:6px;"></iframe>
+        <iframe src="" frameborder="0" style="width:100%;height:${window.innerHeight > this.definedHeight ? this.definedHeight - 50 : "80vh"};border-radius:6px;"></iframe>
         <div class="popup-buttons">
           <button class="popup-close">Close</button>
           <button class="popup-popout">Pop-out</button>
@@ -59,17 +61,32 @@ class PopupWindow extends HTMLElement {
   connectedCallback() {
     this.shadowRoot.querySelector(".popup-close").onclick = () => this.hide();
     this.shadowRoot.querySelector(".popup-popout").onclick = () => {
-      window.open(this.url, "_blank", "popup,width=800,height=600");
+      window.open(this.url, "_blank", "popup,width=1000,height=800");
       this.hide();
     };
   }
   
-  show(url, animateFrom) {
+  show(url, animateFrom, size = "800x600") {
     this.url = url;
     this.shadowRoot.querySelector("iframe").src = url;
     this.style.display = "flex";
-    // Animate from button
+
+    // Parse size (e.g., "400x500")
+    let width = "800px", height = "600px";
+    if (size && typeof size === "string" && size.includes("x")) {
+      [width, height] = size.split("x").map(v => v.trim() + "px");
+    }
+    this.definedWidth = width;
+    this.definedHeight = height;
+
+    // Set popup size
     const popupContent = this.shadowRoot.querySelector(".popup-content");
+    popupContent.style.minWidth = width;
+    popupContent.style.minHeight = height;
+    const iframe = this.shadowRoot.querySelector("iframe");
+    iframe.style.height = height; 
+
+    // Animate from button
     if (animateFrom) {
       const rect = animateFrom.getBoundingClientRect();
       popupContent.animate(

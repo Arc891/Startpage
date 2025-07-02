@@ -22,16 +22,18 @@ const default_config = {
           name: "favorites",
           links: [
             {
-              name: "spotify",
-              url: "https://open.spotify.com",
-              icon: "brand-spotify",
-              icon_color: "#a6e3a1",
-            },
-            {
               name: "namokiMods",
               url: "https://namokimods.com",
               icon: "clock-cog",
               icon_color: "#fab387",
+            },
+            {
+              name: "wordle",
+              url: "https://wordle.arc8.dev",
+              icon: "square-letter-w",
+              icon_color: "#a6e3a1",
+              popup: true,
+              popup_size: "500x700",
             },
             {
               name: "console",
@@ -39,6 +41,7 @@ const default_config = {
               icon: "terminal-2",
               icon_color: "#89b4fa",
               popup: true,
+              popup_size: "800x600",
             },
             {
               name: "dashboard",
