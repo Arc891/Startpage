@@ -323,22 +323,26 @@ class Tabs extends Component {
     `;
   }
 
+  openPopupListener(e) {
+    const btn = e.target.closest(".popup-link");
+    if (btn) {
+      e.preventDefault();
+      const url = btn.getAttribute("data-url");
+      const popup = document.getElementById("popupWindow");
+      if (popup) {
+        const popupSize = btn.getAttribute("toSize") || "800x600";
+        console.debug(`Opening popup for URL: ${url} with size: ${popupSize}`);
+        popup.show(url, btn, popupSize);
+      } 
+    }
+  }
+
   connectedCallback() {
     this.render();
     // Use the shadow root if present, otherwise fallback to document
     const root = this.shadowRoot || document;
     root.addEventListener("click", (e) => {
-      const btn = e.target.closest(".popup-link");
-      if (btn) {
-        e.preventDefault();
-        const url = btn.getAttribute("data-url");
-        const popup = document.getElementById("popupWindow");
-        if (popup) {
-          const popupSize = btn.getAttribute("toSize") || "800x600";
-          console.debug(`Opening popup for URL: ${url} with size: ${popupSize}`);
-          popup.show(url, btn, popupSize);
-        } 
-      }
+      this.openPopupListener(e);
     });
   }
 }

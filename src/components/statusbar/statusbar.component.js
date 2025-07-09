@@ -263,12 +263,6 @@ class Statusbar extends Component {
 
     if (target.shadow && target.shadow.activeElement) return;
 
-    /*
-    if (Number.isInteger(parseInt(key)) && key <= this.externalRefs.categories.length) {
-      this.activateByKey(key - 1);
-    }
-    */
-
     let activeTab = -1;
     this.refs.tabs.forEach((tab, index) => {
       if (tab.getAttribute("active") === "") {
@@ -277,12 +271,12 @@ class Statusbar extends Component {
     });
     
     switch (key) {
+      // case "ArrowDown": // Deactivated for now
       case "ArrowLeft":
-      case "ArrowDown":
         this.activateByKey(activeTab - 1 < 0 ? this.refs.tabs.length - 2 : activeTab - 1);
         break;
+      // case "ArrowUp": // Deactivated for now
       case "ArrowRight":
-      case "ArrowUp":
         this.activateByKey((activeTab + 1) % (this.refs.tabs.length - 1));
         break;
       default:

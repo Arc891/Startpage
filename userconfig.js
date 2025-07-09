@@ -12,7 +12,18 @@ const default_config = {
   },
   disabled: [],
   fastlink: "https://arc8.dev",
-  openLastVisitedTab: true,
+  openLastVisitedTab: false,
+  defaultSearchEngine: "Google",
+  searchEngines: [
+    {
+      name: "Google",
+      url: "https://www.google.com/search?q=",
+    },
+    {
+      name: "DuckDuckGo",
+      url: "https://www.duckduckgo.com/?q=",
+    },
+  ],
   tabs: [
     {
       name: "myself",
