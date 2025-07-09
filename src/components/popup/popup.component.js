@@ -64,6 +64,22 @@ class PopupWindow extends HTMLElement {
       window.open(this.url, "_blank", "popup,width=1000,height=800");
       this.hide();
     };
+
+    // Close on clicking outside the popup content
+    this.onclick = (e) => {
+      if (e.target === this) {
+        this.hide();
+      }
+    };
+
+    // Bind keyboard event handler
+    this.handleKeydown = this.handleKeydown.bind(this);
+  }
+
+  handleKeydown(e) {
+    if (e.key === 'Escape') {
+      this.hide();
+    }
   }
   
   show(url, animateFrom, size = "800x600") {
@@ -100,11 +116,17 @@ class PopupWindow extends HTMLElement {
         { duration: 300, easing: "cubic-bezier(.4,2,.6,1)" }
       );
     }
+    
+    // Add keyboard event listener
+    document.addEventListener('keydown', this.handleKeydown);
+    
     setTimeout(() => this.classList.add("show"), 10);
   }
   
   hide() {
     this.classList.remove("show");
+    // Remove keyboard event listener
+    document.removeEventListener('keydown', this.handleKeydown);
     setTimeout(() => (this.style.display = "none"), 250);
     this.shadowRoot.querySelector("iframe").src = "";
   }
