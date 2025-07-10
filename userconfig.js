@@ -30,14 +30,8 @@ const default_config = {
       background_url: "src/img/banners/cbg-9.gif",
       categories: [
         {
-          name: "favorites",
+          name: "personal projects",
           links: [
-            {
-              name: "namokiMods",
-              url: "https://namokimods.com",
-              icon: "clock-cog",
-              icon_color: "#fab387",
-            },
             {
               name: "wordle",
               url: "https://wordle.arc8.dev",
@@ -348,6 +342,169 @@ const default_config = {
             },
           ],
         },
+      ],
+    },
+    {
+      name: "misc",
+      background_url: "src/img/banners/cbg-6.gif",
+      categories: [
+        {
+          name: "shopping",
+          links: [
+            {
+              name: "namokiMods",
+              url: "https://namokimods.com",
+              icon: "clock-cog",
+              icon_color: "#fab387",
+            },
+            {
+              name: "amazon",
+              url: "https://www.amazon.nl",
+              icon: "brand-amazon",
+              icon_color: "#cba6f7",
+            },
+            {
+              name: "bol",
+              url: "https://www.bol.com",
+              icon: "circle-letter-b",
+              icon_color: "#89b4fa",
+            },
+            {
+              name: "coolblue",
+              url: "https://www.coolblue.nl",
+              icon: "circle-letter-c",
+              icon_color: "#fab387",
+            }
+          ],
+        },
+        {
+          name: "finances",
+          links: [
+            {
+              name: "ing",
+              url: "https://mijn.ing.nl/login/",
+              icon: "cat",
+              icon_color: "#fab387",
+            },
+            {
+              name: "asn",
+              url: "https://www.asnbank.nl/online/web/onlinebankieren/inloggen/",
+              icon: "leaf",
+              icon_color: "#f38ba8",
+            },
+            {
+              name: "gocardless",
+              url: "https://gocardless.com",
+              icon: "credit-card",
+              icon_color: "#a6e3a1",
+            },
+            {
+              name: "tikkie",
+              url: "https://tikkie.me",
+              icon: "coins",
+              icon_color: "#cba6f7",
+            }
+          ],
+        }, 
+        {
+          name: "news",
+          links: [
+            {
+              name: "nos",
+              url: "https://www.nos.nl",
+              icon: "radio",
+              icon_color: "#f38ba8",
+            },
+            {
+              name: "nu.nl",
+              url: "https://www.nu.nl",
+              icon: "news",
+              icon_color: "#a6e3a1",
+            },
+            {
+              name: "tweakers",
+              url: "https://www.tweakers.net",
+              icon: "tool",
+              icon_color: "#fab387",
+            },
+            {
+              name: "ad",
+              url: "https://www.ad.nl",
+              icon: "square-letter-a",
+              icon_color: "#f38ba8",
+            },
+          ],
+        }
+        // {
+        //   name: "games",
+        //   links: [
+        //     {
+        //       name: "chess",
+        //       url: "https://chess.com",
+        //       icon: "chess",
+        //       icon_color: "#a6e3a1",
+        //     },
+        //     {
+        //       name: "lichess",
+        //       url: "https://lichess.org",
+        //       icon: "chess-knight",
+        //       icon_color: "#ffffff",
+        //     },
+        //     {
+        //       name: "steam",
+        //       url: "https://store.steampowered.com",
+        //       icon: "brand-steam",
+        //       icon_color: "#89b4fa",
+        //     },
+        //     {
+        //       name: "epicgames",
+        //       url: "https://store.epicgames.com",
+        //       icon: "brand-fortnite",
+        //       icon_color: "#fab387",
+        //     },
+        //     {
+        //       name: "nintendo",
+        //       url: "https://nintendo.nl",
+        //       icon: "device-nintendo",
+        //       icon_color: "#f38ba8",
+        //     },
+        //   ],
+        // },
+        // {
+        //   name: "communication",
+        //   links: [
+        //     {
+        //       name: "whatsapp",
+        //       url: "https://web.whatsapp.org",
+        //       icon: "brand-whatsapp",
+        //       icon_color: "#a6e3a1",
+        //     },
+        //     {
+        //       name: "discord",
+        //       url: "https://discord.com/channels/@me",
+        //       icon: "brand-discord",
+        //       icon_color: "#cba6f7",
+        //     },
+        //     {
+        //       name: "telegram",
+        //       url: "https://web.telegram.org",
+        //       icon: "brand-telegram",
+        //       icon_color: "#89b4fa",
+        //     },
+        //     {
+        //       name: "instagram",
+        //       url: "https://www.instagram.com",
+        //       icon: "brand-instagram",
+        //       icon_color: "#fab387",
+        //     },
+        //     {
+        //       name: "reddit",
+        //       url: "https://www.reddit.com/r/unixporn",
+        //       icon: "brand-reddit",
+        //       icon_color: "#f38ba8",
+        //     },
+        //   ],
+        // },
       ],
     },
   ],
