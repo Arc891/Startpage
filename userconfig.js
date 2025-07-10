@@ -248,7 +248,7 @@ const default_config = {
             },
             {
               name: "crunchyroll",
-              url: "https://cruncyroll.com",
+              url: "https://crunchyroll.com",
               icon: "brand-funimation",
               icon_color: "#fab387",
             },
