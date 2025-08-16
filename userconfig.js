@@ -60,6 +60,12 @@ const default_config = {
               icon: "brand-docker",
               icon_color: "#89b4fa",
             },
+            {
+              name: "adguard",
+              url: "https://agh.arc8.dev",
+              icon: "shield-check-filled",
+              icon_color: "#a6e3a1",
+            },
           ],
         },
         {
@@ -204,6 +210,12 @@ const default_config = {
               url: "https://login.tailscale.com/admin/machines",
               icon: "grid-dots",
               icon_color: "#c4c4c4"
+            },
+            {
+              name: "rbpc",
+              url: "https://connect.raspberrypi.com/devices",
+              icon: "screen-share",
+              icon_color: "#f38ba8"
             },
             {
               name: "apiscp",
