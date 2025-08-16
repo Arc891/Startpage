@@ -62,7 +62,7 @@ const default_config = {
             },
             {
               name: "adguard",
-              url: "https://agh.arc8.dev",
+              url: "http://rp5.at-skate.ts.net",
               icon: "shield-check-filled",
               icon_color: "#a6e3a1",
             },
