@@ -29,6 +29,15 @@ https://github.com/pivoshenko/catppuccin-startpage/assets/40499728/d96c8bd6-168e
 Aesthetic and clean startpage in [**Catppuccin Mocha**](https://catppuccin.com/palette) style, hosted on GitHub Pages. This start page is based on the [`dawn`](https://github.com/b-coimbra/dawn) and [`tartarus-startpage`](https://github.com/AllJavi/tartarus-startpage), which has even more functionality.
 I've tweaked the page's style to match [Catppuccin](https://github.com/catppuccin/catppuccin) palette and my [`dotfiles`](https://github.com/pivoshenko/dotfiles).
 
+### Features
+
+- **Multiple Icon Packs**: Support for Tabler Icons, Simple Icons, and Material Icons
+- **Flexible Icon Configuration**: Mix and match icons from different packs
+- **Popup Window Support**: Open links in custom popup windows
+- **Weather Integration**: Display weather information for your location
+- **Customizable Tabs**: Organize your bookmarks into themed tabs
+- **Icon Validation Tools**: Built-in validation and debugging tools
+
 ### Main principles
 
 - Minimalism in everything
@@ -47,6 +56,30 @@ I've tweaked the page's style to match [Catppuccin](https://github.com/catppucci
    - Set your location for the weather widget
    - Update the number of pages and their banners
    - Update bookmarks and quick links for the one you are using the most :3
+   - Configure your preferred icon packs and styles
+
+## Icon System
+
+This startpage supports multiple icon packs that you can mix and match:
+
+### Supported Icon Packs
+- **Tabler Icons** (default): 4,000+ general purpose icons
+- **Simple Icons**: 2,500+ brand and company logos  
+- **Material Icons**: 2,000+ standard UI icons
+
+### Basic Icon Usage
+```javascript
+// Use default pack (Tabler Icons)
+{ icon: "brand-github", icon_color: "#a6e3a1" }
+
+// Specify different pack
+{ icon: "github", icon_pack: "simple", icon_color: "#a6e3a1" }
+
+// Use pack:icon format
+{ icon: "simple:github", icon_color: "#a6e3a1" }
+```
+
+For detailed icon configuration examples and debugging tools, see [ICONS.md](ICONS.md).
 
 > [!TIP]
 > You can find icons for your bookmarks using [`tabler-icons`](https://tabler.io/icons)

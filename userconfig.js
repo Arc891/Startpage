@@ -10,6 +10,16 @@ const default_config = {
     format: "h:i:s A d/m/Y",
     iconColor: "#f38ba8",
   },
+  // Icon system configuration
+  icons: {
+    defaultPack: "tabler", // Default icon pack: tabler, simple, material
+    fallbackIcon: "circle", // Fallback icon if specified icon not found
+    packs: {
+      tabler: { enabled: true },
+      simple: { enabled: true },
+      material: { enabled: true }
+    }
+  },
   disabled: [],
   fastlink: "https://arc8.dev",
   openLastVisitedTab: false,
@@ -49,7 +59,7 @@ const default_config = {
               popup_size: "800x600",
             },
             {
-              name: "dashboard",
+              name: "pironman",
               url: "https://dashboard.arc8.dev",
               icon: "device-desktop-analytics",
               icon_color: "#f38ba8",
@@ -62,8 +72,30 @@ const default_config = {
             },
             {
               name: "adguard",
-              url: "http://rp5.at-skate.ts.net",
-              icon: "shield-check-filled",
+              url: "http://agh.arc8.dev",
+              icon: "adguard",
+              icon_pack: "simple",
+              icon_color: "#a6e3a1",
+            },
+            {
+              name: "grafana",
+              url: "http://grafana.arc8.dev",
+              icon: "grafana",
+              icon_pack: "simple",
+              icon_color: "#fab387",
+            },
+            {
+              name: "prometheus",
+              url: "http://prometheus.arc8.dev",
+              icon: "prometheus",
+              icon_pack: "simple",
+              icon_color: "#f38ba8",
+            },
+            {
+              name: "adguard2",
+              url: "http://agh2.arc8.dev",
+              icon: "adguard",
+              icon_pack: "simple",
               icon_color: "#a6e3a1",
             },
           ],
@@ -138,7 +170,7 @@ const default_config = {
             {
               name: "github",
               url: "https://github.com/Arc891",
-              icon: "brand-github",
+              icon: "brand-github", // Tabler icon (default)
               icon_color: "#a6e3a1",
             },
             {
@@ -185,7 +217,8 @@ const default_config = {
             {
               name: "chatgpt",
               url: "https://chatgpt.com",
-              icon: "brand-openai",
+              icon: "openai", // Simple Icons example
+              icon_pack: "simple",
               icon_color: "#ffffff",
             },
           ],
@@ -417,7 +450,7 @@ const default_config = {
               icon_color: "#cba6f7",
             }
           ],
-        }, 
+        },
         {
           name: "news",
           links: [
@@ -523,3 +556,30 @@ const default_config = {
 };
 
 const CONFIG = new Config(default_config);
+
+// Initialize icon system with user configuration when DOM is ready
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof window !== 'undefined' && window.IconManager && CONFIG.icons) {
+    // Set default pack if specified
+    if (CONFIG.icons.defaultPack) {
+      window.IconManager.setDefaultPack(CONFIG.icons.defaultPack);
+    }
+
+    // Set fallback icon if specified
+    if (CONFIG.icons.fallbackIcon) {
+      window.IconManager.setFallbackIcon(CONFIG.icons.fallbackIcon);
+    }
+
+    console.log('Icon system initialized with default pack:', CONFIG.icons.defaultPack);
+  }
+});
+
+// Also try immediate initialization in case DOM is already loaded
+if (typeof window !== 'undefined' && window.IconManager && CONFIG.icons) {
+  if (CONFIG.icons.defaultPack) {
+    window.IconManager.setDefaultPack(CONFIG.icons.defaultPack);
+  }
+  if (CONFIG.icons.fallbackIcon) {
+    window.IconManager.setFallbackIcon(CONFIG.icons.fallbackIcon);
+  }
+}

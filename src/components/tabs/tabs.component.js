@@ -6,10 +6,20 @@ class Links extends Component {
   static getIcon(link) {
     const defaultColor = "#1e1e2e";
 
-    return link.icon
-      ? `<i class="ti ti-${link.icon} link-icon"
-            style="color: ${link.icon_color ?? defaultColor}"></i>`
-      : "";
+    if (!link.icon) return "";
+
+    // Use the global IconManager to generate icon HTML
+    const iconDef = {
+      pack: link.icon_pack || undefined, // Will use default if not specified
+      icon: link.icon,
+      color: link.icon_color || defaultColor,
+      size: link.icon_size
+    };
+
+    return window.IconManager ?
+      window.IconManager.generateIcon(iconDef) :
+      // Fallback to original Tabler icons if IconManager isn't available
+      `<i class="ti ti-${link.icon} link-icon" style="color: ${link.icon_color ?? defaultColor}"></i>`;
   }
 
   static getAll(tabName, tabs) {
@@ -24,15 +34,15 @@ class Links extends Component {
               <div class="links-wrapper">
               ${links
               .map(
-                (link) => 
-                  link.popup 
+                (link) =>
+                  link.popup
                     ? `
                       <div class="link-info">
                         <button class="popup-link" data-url="${link.url}" toSize="${link.popup_size || '800x600'}">
                           ${Links.getIcon(link)}
                           ${link.name ? `<p class="link-name">${link.name}</p>` : ""}
                         </button>
-                      </div>` 
+                      </div>`
                     : `
                       <div class="link-info">
                         <a href="${link.url}" target="_self">
@@ -261,6 +271,28 @@ class Tabs extends Component {
           color: #cdd6f4;
       }
 
+      /* Support for different icon packs */
+      .categories .tabler-icon {
+          font-size: 27px;
+      }
+
+      .categories .simple-icon {
+          font-size: 27px;
+          font-family: 'Simple Icons' !important;
+      }
+
+      .categories .material-icon {
+          font-size: 27px;
+          font-family: 'Material Icons' !important;
+      }
+
+      /* Simple Icons specific styling - si class prefix */
+      .categories .si {
+          font-size: 27px;
+          font-family: 'Simple Icons' !important;
+          display: inline-block;
+      }
+
       .categories .link-icon + .link-name {
           margin-left: 10px;
       }
@@ -333,7 +365,7 @@ class Tabs extends Component {
         const popupSize = btn.getAttribute("toSize") || "800x600";
         console.debug(`Opening popup for URL: ${url} with size: ${popupSize}`);
         popup.show(url, btn, popupSize);
-      } 
+      }
     }
   }
 
