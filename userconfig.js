@@ -98,6 +98,12 @@ const default_config = {
               icon_pack: "material",
               icon_color: "#a6e3a1",
             },
+            {
+              name: "AI",
+              url: "http://ai.arc8.dev",
+              icon: "brand-github-copilot",
+              icon_color: "#ffffff",
+            },
           ],
         },
         {
@@ -239,6 +245,13 @@ const default_config = {
               icon_color: "#f38ba8",
             },
             {
+              name: "hetzner",
+              url: "https://console.hetzner.com/",
+              icon: "hetzner",
+              icon_pack: "simple",
+              icon_color: "#a6e3a1",
+            },
+            {
               name: "tailscale",
               url: "https://login.tailscale.com/admin/machines",
               icon: "grid-dots",
@@ -249,12 +262,6 @@ const default_config = {
               url: "https://connect.raspberrypi.com/devices",
               icon: "screen-share",
               icon_color: "#f38ba8"
-            },
-            {
-              name: "apiscp",
-              url: "https://ezrah.me",
-              icon: "binary-tree-2",
-              icon_color: "#a6e3a1",
             },
           ],
         },
