@@ -306,7 +306,7 @@ const default_config = {
             },
             {
               name: "F1TV",
-              url: "https://f1tv.com",
+              url: "https://f1tv.formula1.com",
               icon: "square-f1",
               icon_color: "#f38ba8",
             },
