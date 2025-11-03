@@ -44,6 +44,7 @@ class SearchBar extends Component {
                 margin-right: 10px;
                 font: 300 9pt 'Roboto', sans-serif;
                 color: #cdd6f4;
+                white-space: pre-wrap;
             }
 
             .search-icon {
@@ -70,11 +71,7 @@ class SearchBar extends Component {
         const key = event.key;
 
         if (key.length === 1) {
-            if (key === " ") {
-                this.inputText += "&nbsp;";
-            } else {
-                this.inputText += key;
-            }
+            this.inputText += key;
         } else if (key === "Backspace") {
             if (event.ctrlKey) { this.inputText = "" }
             else if (event.altKey) { 
@@ -217,7 +214,7 @@ class SearchBar extends Component {
 
 
     search = () => {
-        const inputText = this.inputText.replace(/&nbsp;/g, " ").trim(); // Normalize spaces
+        const inputText = this.inputText.trim(); // Normalize spaces
         const matchingBookmarks = this.checkBookmarksForSearch();
         if (matchingBookmarks.length > 0) {
             console.log("Matching bookmarks found:", matchingBookmarks);
