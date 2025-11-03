@@ -227,6 +227,12 @@ const default_config = {
               icon_pack: "simple",
               icon_color: "#ffffff",
             },
+            {
+              name: "claude",
+              url: "https://claude.ai",
+              icon: "robot",
+              icon_color: "#fab387",
+            },
           ],
         },
         {
