@@ -93,7 +93,7 @@ const default_config = {
             },
             {
               name: "taiga",
-              url: "http://taiga.arc8.dev",
+              url: "http://taiga.hulsman.dev",
               icon: "view_kanban",
               icon_pack: "material",
               icon_color: "#a6e3a1",
